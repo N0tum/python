@@ -1,17 +1,17 @@
 import random
 
-nouns = ["автомобиль", "лес", "огонь", "город", "дом"]
-adverbs = ["сегодня", "вчера", "завтра", "позавчера", "ночью"]
-adjectives = ["веселый", "яркий", "зеленый", "утопичный", "мягкий"]
+NOUNS = ["автомобиль", "лес", "огонь", "город", "дом"]
+ADVERBS = ["сегодня", "вчера", "завтра", "позавчера", "ночью"]
+ADJECTIVES = ["веселый", "яркий", "зеленый", "утопичный", "мягкий"]
 
-ran_nou = random.choice(nouns)
-ran_adv = random.choice(adverbs)
-ran_adj = random.choice(adjectives)
 
-def get_jokes():
-    for nou, adv, adj in zip(ran_nou, ran_adv, ran_adj):
-        print(f'{nou}, {adv}, {adj}')
+def get_jokes(count_j):
+    joke = []
+    for i in range(count_j):
+        joke.append(f"{NOUNS[random.randint(0, 4)]} {ADVERBS[random.randint(0, 4)]} {ADJECTIVES[random.randint(0, 4)]}")
+    return joke
 
-get_jokes()
 
-# не доделал, ищу причину моей проблемы
+count = int(input("How many jokes you want? \n"))
+
+print(f"Here the jokes: \n {get_jokes(count)}")
